@@ -25,7 +25,7 @@ samtools sort -o 7052_D_Sorted.bam 7052_D.bam
 
 gatk --java-options "-Xmx50G" MarkDuplicates --INPUT 7052_D_Sorted.bam --METRICS_FILE 7052_D_metrics.txt --OUTPUT 7052_D_DMarked.bam
 
-gatk --java-options "-Xmx50G" BaseRecalibrator -I 7052_D_DMarked.bam -R GRCh57-lite.fa --known-sites /mnt/rds/txl80/LaframboiseLab/sxl919/sxl919/tools/sxl919/b37/dbsnp_138.b37.vcf -O 7052_D_RecalData.table
+gatk --java-options "-Xmx50G" BaseRecalibrator -I 7052_D_DMarked.bam -R GRCh37-lite.fa --known-sites /mnt/rds/txl80/LaframboiseLab/sxl919/sxl919/tools/sxl919/b37/dbsnp_138.b37.vcf -O 7052_D_RecalData.table
 
 cp 7052_D_RecalData.table /mnt/rds/txl80/LaframboiseLab/vst14/merged_bams/
 
