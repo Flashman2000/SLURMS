@@ -1,5 +1,4 @@
 #!/bin/bash
-#SBATCH --job-name=$PNUM
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=vst14@case.edu
 #SBATCH --mem=50G
