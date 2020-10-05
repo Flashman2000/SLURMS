@@ -11,10 +11,10 @@ module load gatk
 module load samtools
 
 cd /mnt/rds/txl80/LaframboiseLab/vst14/merged_bams/
-mkdir $PNUM_D
+mkdir $PNUM\_D
 
 cd /mnt/rds/txl80/LaframboiseLab/sxl919/tape/EGA_download/St-Judes/AMKL/AMKL-1-bam/
-cp *$PNUM_D*.bam $PFSDIR
+cp *$PNUM\_D*.bam $PFSDIR
 
 cp /mnt/rds/txl80/LaframboiseLab/vst14/GRCh37-lite.fa $PFSDIR
 cp /mnt/rds/txl80/LaframboiseLab/vst14/GRCh37-lite.fa.fai $PFSDIR
@@ -22,18 +22,18 @@ cp /mnt/rds/txl80/LaframboiseLab/vst14/GRCh37-lite.dict $PFSDIR
 
 cd $PFSDIR
 
-samtools merge $PNUM_D.bam *.bam
+samtools merge $PNUM\_D.bam *.bam
 
-samtools sort -o $PNUM_D_Sorted.bam $PNUM_D.bam
+samtools sort -o $PNUM\_D_Sorted.bam $PNUM\_D.bam
 
-gatk --java-options "-Xmx50G" MarkDuplicates --INPUT $PNUM_D_Sorted.bam --METRICS_FILE $PNUM_D_metrics.txt --OUTPUT $PNUM_D_DMarked.bam
+gatk --java-options "-Xmx50G" MarkDuplicates --INPUT $PNUM\_D_Sorted.bam --METRICS_FILE $PNUM\_D_metrics.txt --OUTPUT $PNUM\_D_DMarked.bam
 
-gatk --java-options "-Xmx50G" BaseRecalibrator -I $PNUM_D_DMarked.bam -R GRCh37-lite.fa --known-sites /mnt/rds/txl80/LaframboiseLab/sxl919/sxl919/tools/sxl919/b37/dbsnp_138.b37.vcf -O $PNUM_D_RecalData.table
+gatk --java-options "-Xmx50G" BaseRecalibrator -I $PNUM\_D_DMarked.bam -R GRCh37-lite.fa --known-sites /mnt/rds/txl80/LaframboiseLab/sxl919/sxl919/tools/sxl919/b37/dbsnp_138.b37.vcf -O $PNUM\_D_RecalData.table
 
-cp $PNUM_D_RecalData.table /mnt/rds/txl80/LaframboiseLab/vst14/merged_bams/$PNUM_D/
+cp $PNUM\_D_RecalData.table /mnt/rds/txl80/LaframboiseLab/vst14/merged_bams/$PNUM\_D/
 
-gatk --java-options "-Xmx50G" ApplyBQSR -R GRCh37-lite.fa -I $PNUM_D_DMarked.bam --bqsr-recal-file $PNUM_D_RecalData.table -O $PNUM_D_BQSR.bam
+gatk --java-options "-Xmx50G" ApplyBQSR -R GRCh37-lite.fa -I $PNUM\_D_DMarked.bam --bqsr-recal-file $PNUM\_D_RecalData.table -O $PNUM\_D_BQSR.bam
 
-cp $PNUM_D_BQSR.bam /mnt/rds/txl80/LaframboiseLab/vst14/merged_bams/$PNUM_D/
+cp $PNUM\_D_BQSR.bam /mnt/rds/txl80/LaframboiseLab/vst14/merged_bams/$PNUM\_D/
 
 rm -rf "PFSDIR"/* 
