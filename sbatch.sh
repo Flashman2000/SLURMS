@@ -1,12 +1,11 @@
 #!/bin/bash
 
-sbatch 7049_D.slurm
-sbatch 7048_D.slurm
-sbatch 7047_D.slurm
-sbatch 7046_D.slurm
-sbatch 7045_D.slurm
-sbatch 7044_D.slurm
-sbatch 7043_D.slurm
-sbatch 7042_D.slurm
-sbatch 7041_D.slurm
-sbatch 7040_D.slurm
+sbatch 7039_D.slurm
+sbatch 7038_D.slurm
+sbatch 7036_D.slurm
+sbatch 7035_D.slurm
+sbatch 7034_D.slurm
+sbatch 7033_D.slurm
+sbatch 7030_D.slurm
+sbatch 7029_D.slurm
+sbatch 7028_D.slurm
