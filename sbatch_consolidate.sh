@@ -1,7 +1,8 @@
 #!/bin/bash
 
-for d in /mnt/rds/txl80/LaframboiseLab/vst14/merged_bams/*/
+for d in /mnt/rds/txl80/LaframboiseLab/vst14/AR_BAM/*.bam
 do
-	FN="$(basename -- $d)"
-	sbatch --export=dir=$d,filename=$FN --job-name=$FN generic_consolidate.slurm
+  File="$(basename -- $d)"
+  FN=${File%.*}
+  sbatch --export=bam=$File,filename=$FN --job-name=$FN generic_consolidate.slurm
 done
