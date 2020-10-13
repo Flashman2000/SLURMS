@@ -1,9 +1,0 @@
-Using GATK jar /usr/local/gatk/4.1.7.0/gatk-package-4.1.7.0-local.jar
-Running:
-    java -Dsamjdk.use_async_io_read_samtools=false -Dsamjdk.use_async_io_write_samtools=true -Dsamjdk.use_async_io_write_tribble=false -Dsamjdk.compression_level=2 -Xmx23G -jar /usr/local/gatk/4.1.7.0/gatk-package-4.1.7.0-local.jar GenomicsDBImport --genomicsdb-workspace-path /mnt/rds/txl80/LaframboiseLab/vst14/AR_BAM/genomicsdb_D/ --tmp-dir /mnt/rds/txl80/LaframboiseLab/vst14/tmp/ --sample-name-map cohort.sample_map -L 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,X,Y,MT
-***********************************************************************
-
-A USER ERROR has occurred: Failure working with the tmp directory /mnt/rds/txl80/LaframboiseLab/vst14/tmp. Try changing the tmp dir with with --tmp-dir on the command line.  Exact error was should exist and have read/write access
-
-***********************************************************************
-Set the system property GATK_STACKTRACE_ON_USER_EXCEPTION (--java-options '-DGATK_STACKTRACE_ON_USER_EXCEPTION=true') to print the stack trace.
