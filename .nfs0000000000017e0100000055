@@ -1,0 +1,42 @@
+Using GATK jar /usr/local/gatk/4.1.7.0/gatk-package-4.1.7.0-local.jar
+Running:
+    java -Dsamjdk.use_async_io_read_samtools=false -Dsamjdk.use_async_io_write_samtools=true -Dsamjdk.use_async_io_write_tribble=false -Dsamjdk.compression_level=2 -Xmx175G -jar /usr/local/gatk/4.1.7.0/gatk-package-4.1.7.0-local.jar GenomicsDBImport --genomicsdb-workspace-path /scratch/users/vst14/genomicsdb_D/ --tmp-dir /scratch/users/vst14/tmp/ --sample-name-map /mnt/rds/txl80/LaframboiseLab/vst14/AR_BAM/cohort.sample_map -L /mnt/rds/txl80/LaframboiseLab/vst14/SLURMS/intervals.list
+13:33:26.352 INFO  NativeLibraryLoader - Loading libgkl_compression.so from jar:file:/usr/local/gatk/4.1.7.0/gatk-package-4.1.7.0-local.jar!/com/intel/gkl/native/libgkl_compression.so
+Oct 28, 2020 1:33:26 PM shaded.cloud_nio.com.google.auth.oauth2.ComputeEngineCredentials runningOnComputeEngine
+INFO: Failed to detect whether we are running on Google Compute Engine.
+13:33:26.576 INFO  GenomicsDBImport - ------------------------------------------------------------
+13:33:26.576 INFO  GenomicsDBImport - The Genome Analysis Toolkit (GATK) v4.1.7.0
+13:33:26.576 INFO  GenomicsDBImport - For support and documentation go to https://software.broadinstitute.org/gatk/
+13:33:26.577 INFO  GenomicsDBImport - Executing as vst14@compt308 on Linux v3.10.0-957.el7.x86_64 amd64
+13:33:26.577 INFO  GenomicsDBImport - Java runtime: OpenJDK 64-Bit Server VM v1.8.0_181-b13
+13:33:26.577 INFO  GenomicsDBImport - Start Date/Time: October 28, 2020 1:33:26 PM EDT
+13:33:26.577 INFO  GenomicsDBImport - ------------------------------------------------------------
+13:33:26.578 INFO  GenomicsDBImport - ------------------------------------------------------------
+13:33:26.578 INFO  GenomicsDBImport - HTSJDK Version: 2.21.2
+13:33:26.578 INFO  GenomicsDBImport - Picard Version: 2.21.9
+13:33:26.578 INFO  GenomicsDBImport - HTSJDK Defaults.COMPRESSION_LEVEL : 2
+13:33:26.578 INFO  GenomicsDBImport - HTSJDK Defaults.USE_ASYNC_IO_READ_FOR_SAMTOOLS : false
+13:33:26.578 INFO  GenomicsDBImport - HTSJDK Defaults.USE_ASYNC_IO_WRITE_FOR_SAMTOOLS : true
+13:33:26.578 INFO  GenomicsDBImport - HTSJDK Defaults.USE_ASYNC_IO_WRITE_FOR_TRIBBLE : false
+13:33:26.578 INFO  GenomicsDBImport - Deflater: IntelDeflater
+13:33:26.578 INFO  GenomicsDBImport - Inflater: IntelInflater
+13:33:26.578 INFO  GenomicsDBImport - GCS max retries/reopens: 20
+13:33:26.578 INFO  GenomicsDBImport - Requester pays: disabled
+13:33:26.578 INFO  GenomicsDBImport - Initializing engine
+13:33:26.925 INFO  IntervalArgumentCollection - Processing 3095693981 bp from intervals
+13:33:26.927 INFO  GenomicsDBImport - Done initializing engine
+13:33:27.261 INFO  GenomicsDBImport - Vid Map JSON file will be written to /scratch/users/vst14/genomicsdb_D/vidmap.json
+13:33:27.261 INFO  GenomicsDBImport - Callset Map JSON file will be written to /scratch/users/vst14/genomicsdb_D/callset.json
+13:33:27.261 INFO  GenomicsDBImport - Complete VCF Header will be written to /scratch/users/vst14/genomicsdb_D/vcfheader.vcf
+13:33:27.261 INFO  GenomicsDBImport - Importing to array - /scratch/users/vst14/genomicsdb_D/genomicsdb_array
+13:33:27.261 INFO  ProgressMeter - Starting traversal
+13:33:27.261 INFO  ProgressMeter -        Current Locus  Elapsed Minutes     Batches Processed   Batches/Minute
+13:33:33.570 INFO  GenomicsDBImport - Shutting down engine
+[October 28, 2020 1:33:33 PM EDT] org.broadinstitute.hellbender.tools.genomicsdb.GenomicsDBImport done. Elapsed time: 0.12 minutes.
+Runtime.totalMemory()=5849481216
+***********************************************************************
+
+A USER ERROR has occurred: Failed to create reader from file:///mnt/rds/txl80/LaframboiseLab/vst14/AR_BAM/7068_D_BQSR.g.vcf.gz
+
+***********************************************************************
+Set the system property GATK_STACKTRACE_ON_USER_EXCEPTION (--java-options '-DGATK_STACKTRACE_ON_USER_EXCEPTION=true') to print the stack trace.

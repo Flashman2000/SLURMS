@@ -5,7 +5,8 @@
 #SBATCH -c 10
 #SBATCH -N 1
 #SBATCH --time=100:00:00
-#SBATCH -p gpup100
+#SBATCH -p gpu
+#SBATCH -C gpup100
 #SBATCH --gres=gpu:1
 
 module purge
