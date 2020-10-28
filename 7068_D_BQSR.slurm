@@ -31,4 +31,10 @@ gatk --java-options "-Xmx180G" ApplyBQSR -R GRCh37-lite.fa -I 7068_D_DMarked.bam
 
 cp 7068_D_BQSR.bam /mnt/rds/txl80/LaframboiseLab/vst14/AR_BAM/
 
+cd /mnt/rds/txl80/LaframboiseLab/vst14/AR_BAM/
+
+samtools index 7068_D_BQSR.bam
+
+gatk --java-options "-Xmx180G" HaplotypeCaller -R /mnt/rds/txl80/LaframboiseLab/vst14/GRCh37-lite.fa -I 7068_D_BQSR.bam -O 7068_D_BQSR.g.vcf.gz -ERC GVCF
+
 rm -rf "$PFSDIR"/* 
