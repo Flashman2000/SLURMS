@@ -5,7 +5,6 @@
 #SBATCH -c 20
 #SBATCH -C icosa192gb
 #SBATCH --time=100:00:00
-#SBATCH --job-name=$patient\_$ID
 
 module load gatk 
 cd /mnt/rds/txl80/LaframboiseLab/sxl919/tape/EGA_download/St-Judes/AMKL/AMKL-1-bam/
