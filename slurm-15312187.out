@@ -1,0 +1,38 @@
+Using GATK jar /usr/local/gatk/4.1.7.0/gatk-package-4.1.7.0-local.jar
+Running:
+    java -Dsamjdk.use_async_io_read_samtools=false -Dsamjdk.use_async_io_write_samtools=true -Dsamjdk.use_async_io_write_tribble=false -Dsamjdk.compression_level=2 -Xmx60G -jar /usr/local/gatk/4.1.7.0/gatk-package-4.1.7.0-local.jar ApplyVQSR -R /mnt/rds/txl80/LaframboiseLab/vst14/ref/GRCh37-lite.fa -V /mnt/rds/txl80/LaframboiseLab/vst14/Consolidated_D_VCF/AMKL_D.vcf -O /mnt/rds/txl80/LaframboiseLab/vst14/Consolidated_D_VCF/AMKL_D_VQSR.vcf --tranches-file /mnt/rds/txl80/LaframboiseLab/vst14/Consolidated_D_VCF/AMKL_D_Tranches.tranches --recal-file /mnt/rds/txl80/LaframboiseLab/vst14/Consolidated_D_VCF/AMKL_D_Recal.recal
+22:28:58.934 INFO  NativeLibraryLoader - Loading libgkl_compression.so from jar:file:/usr/local/gatk/4.1.7.0/gatk-package-4.1.7.0-local.jar!/com/intel/gkl/native/libgkl_compression.so
+Nov 03, 2020 10:28:59 PM shaded.cloud_nio.com.google.auth.oauth2.ComputeEngineCredentials runningOnComputeEngine
+INFO: Failed to detect whether we are running on Google Compute Engine.
+22:28:59.085 INFO  ApplyVQSR - ------------------------------------------------------------
+22:28:59.085 INFO  ApplyVQSR - The Genome Analysis Toolkit (GATK) v4.1.7.0
+22:28:59.085 INFO  ApplyVQSR - For support and documentation go to https://software.broadinstitute.org/gatk/
+22:28:59.086 INFO  ApplyVQSR - Executing as vst14@comp233t on Linux v3.10.0-957.el7.x86_64 amd64
+22:28:59.086 INFO  ApplyVQSR - Java runtime: OpenJDK 64-Bit Server VM v1.8.0_181-b13
+22:28:59.087 INFO  ApplyVQSR - Start Date/Time: November 3, 2020 10:28:58 PM EST
+22:28:59.087 INFO  ApplyVQSR - ------------------------------------------------------------
+22:28:59.087 INFO  ApplyVQSR - ------------------------------------------------------------
+22:28:59.087 INFO  ApplyVQSR - HTSJDK Version: 2.21.2
+22:28:59.087 INFO  ApplyVQSR - Picard Version: 2.21.9
+22:28:59.087 INFO  ApplyVQSR - HTSJDK Defaults.COMPRESSION_LEVEL : 2
+22:28:59.087 INFO  ApplyVQSR - HTSJDK Defaults.USE_ASYNC_IO_READ_FOR_SAMTOOLS : false
+22:28:59.087 INFO  ApplyVQSR - HTSJDK Defaults.USE_ASYNC_IO_WRITE_FOR_SAMTOOLS : true
+22:28:59.087 INFO  ApplyVQSR - HTSJDK Defaults.USE_ASYNC_IO_WRITE_FOR_TRIBBLE : false
+22:28:59.088 INFO  ApplyVQSR - Deflater: IntelDeflater
+22:28:59.088 INFO  ApplyVQSR - Inflater: IntelInflater
+22:28:59.088 INFO  ApplyVQSR - GCS max retries/reopens: 20
+22:28:59.088 INFO  ApplyVQSR - Requester pays: disabled
+22:28:59.088 INFO  ApplyVQSR - Initializing engine
+22:28:59.744 INFO  FeatureManager - Using codec VCFCodec to read file file:///mnt/rds/txl80/LaframboiseLab/vst14/Consolidated_D_VCF/AMKL_D_Recal.recal
+22:29:00.844 INFO  FeatureManager - Using codec VCFCodec to read file file:///mnt/rds/txl80/LaframboiseLab/vst14/Consolidated_D_VCF/AMKL_D.vcf
+22:29:00.896 INFO  ApplyVQSR - Done initializing engine
+22:29:00.915 INFO  ApplyVQSR - Keeping all variants with VQSLOD >= 0.0
+22:29:01.147 INFO  ProgressMeter - Starting traversal
+22:29:01.147 INFO  ProgressMeter -        Current Locus  Elapsed Minutes    Variants Processed  Variants/Minute
+22:29:11.162 INFO  ProgressMeter -           2:26773119              0.2                402000        2408627.9
+22:29:21.175 INFO  ProgressMeter -          9:131071723              0.3                790000        2366686.6
+22:29:21.637 INFO  ProgressMeter -           Y:15415115              0.3                816657        2391382.1
+22:29:21.638 INFO  ProgressMeter - Traversal complete. Processed 816657 total variants in 0.3 minutes.
+22:29:23.376 INFO  ApplyVQSR - Shutting down engine
+[November 3, 2020 10:29:23 PM EST] org.broadinstitute.hellbender.tools.walkers.vqsr.ApplyVQSR done. Elapsed time: 0.41 minutes.
+Runtime.totalMemory()=3650617344
